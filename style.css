@@ -1,0 +1,84 @@
+body{
+  margin: 0;
+  padding: 0;
+  background: rgb(90,58,180);
+  background: linear-gradient(90deg, rgba(90,58,180,1) 0%, rgba(29,253,196,1) 56%, rgba(98,69,252,1) 100%);
+}  
+
+  .navbar-brand{
+    font-size: large;
+    font-weight: 600;
+  }
+  .nav-link{
+    font-size: large;
+    font-weight: 600;
+    margin:  0px 10px;
+  }
+  .col-12 img, .col-12 video {
+    opacity: 0.9;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 100%;
+    border: 1px red;
+    margin: 5px;
+  }
+  
+  .col-12 img, .col-12 video  {
+    opacity: 1;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  /* Style the Image Used to Trigger the Modal */
+/* #myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  opacity: 1;
+}
+
+#myImg:hover {opacity: 0.9;} */
+
+
+/*Image modal*/
+
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.733);
+  margin-top: -1px;
+  animation: zoom 0.3s ease-in-out;
+}
+
+@keyframes zoom {
+  from {
+      transform: scale(0);
+  }
+  to {
+      transform: scale(1);
+  }
+}
+.modal img, .modal video {
+  width: 50%;
+  object-fit: cover;
+}
+
+.closeBtn {
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+
+}
+
+.closeBtn:hover {
+  color: rgb(255, 255, 255);
+}
