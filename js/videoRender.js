@@ -7,6 +7,7 @@ function renderVideo() {
     let content = ` <div class="gallery__item col-12 col-md-6 col-lg-3 ">
           <video muted 
           loading="lazy"
+          preload="metadata"
           src="./img/video/shineVideo (${i}).mp4"
            
           />
@@ -39,6 +40,7 @@ let videoModal = (src) => {
   newVideo.setAttribute("src", src);
   newVideo.setAttribute("autoplay", "");
   newVideo.setAttribute("controls", "");
+
   //creating the close button
   const closeBtn = document.createElement("i");
   closeBtn.setAttribute("class", "fas fa-times closeBtn");
