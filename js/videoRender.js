@@ -4,14 +4,35 @@ function renderVideo() {
   const galleryCon = document.getElementById("galleryContainer");
   let contentHTMLGalleryContainer = "";
   for (let i = 1; i <= 43; i++) {
-    let content = ` <div class="gallery__item col-12 col-md-6 col-lg-3 ">
-          <video muted 
-          loading="lazy"
-          preload="metadata"
-          src="./img/video/shineVideo (${i}).mp4"
-           
-          />
-        </div>`;
+    //   let content = `
+
+    //   <div class="swiper-slide gallery__item col-12 col-md-6 col-lg-3 ">
+    //         <video
+
+    //         type="video/mp4"
+
+    //         preload="true"
+    //         alt="shineVideo (${i})"
+    //         src="./img/video/shineVideo (${i}).mp4"
+
+    //         />
+    //       </div>
+
+    // `;
+    let content = `
+  <div class="swiper-slide">
+  <video
+
+            type="video/mp4"
+
+          preload="true"
+             alt="shineVideo (${i})"
+           src="./img/video/shineVideo (${i}).mp4"
+
+            />
+  
+  </div>
+  `;
     contentHTMLGalleryContainer += content;
   }
   //console.log(contentHTMLGalleryContainer);
@@ -19,7 +40,7 @@ function renderVideo() {
 }
 renderVideo();
 
-const videos = document.querySelectorAll(".gallery__item video");
+const videos = document.querySelectorAll(".swiper-slide video");
 let videoSrc;
 // get images src onclick
 videos.forEach((video) => {
@@ -49,5 +70,30 @@ let videoModal = (src) => {
     modal.remove();
     console.log("close bntn");
   };
+  modal.onclick = (e) => {
+    e.target == e.currentTarget && modal.remove();
+  };
   modal.append(newVideo, closeBtn);
 };
+
+const swiper = new Swiper(".swiper", {
+  // Optional parameters
+  direction: "vertical",
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: ".swiper-pagination",
+  },
+
+  // Navigation arrows
+  // navigation: {
+  //   nextEl: ".swiper-button-next",
+  //   prevEl: ".swiper-button-prev",
+  // },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: ".swiper-scrollbar",
+  },
+});

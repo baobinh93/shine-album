@@ -54,12 +54,13 @@ images.forEach((img) => {
 //creating the modal
 let imgModal = (src) => {
   const modal = document.createElement("div");
-  modal.setAttribute("class", "modal");
+  modal.setAttribute("class", "modal   ");
   //add the modal to the main section or the parent element
   document.querySelector(".main").append(modal);
   //adding image to modal
   const newImage = document.createElement("img");
   newImage.setAttribute("src", src);
+  newImage.setAttribute("class", "col-12 col-md-8 col-lg-6");
   //creating the close button
   const closeBtn = document.createElement("i");
   closeBtn.setAttribute("class", "fas fa-times closeBtn");
@@ -67,6 +68,17 @@ let imgModal = (src) => {
   closeBtn.onclick = () => {
     modal.remove();
     console.log("close bntn");
+  };
+
+  modal.onclick = (e) => {
+    e.target == e.currentTarget && modal.remove();
+  };
+  // modal.ondblclick = () => {
+  //   modal.remove();
+  //   console.log("dbclick");
+  // };
+  modal.scrollTop = () => {
+    console.log("top");
   };
   modal.append(newImage, closeBtn);
 };

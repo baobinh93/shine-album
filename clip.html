@@ -12,6 +12,11 @@
     />
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.4.1/css/all.min.css" integrity="sha512-/RUbtHakVMJrg1ILtwvDIceb/cDkk97rWKvfnFSTOmNbytCyEylutDqeEr9adIBye3suD3RfcsXLOLBqYRW4gw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+ 
   </head>
   <body>
   
@@ -34,12 +39,32 @@
               </ul>
             </div>
           </nav>
-      <div
+      <!-- <div
         class="row d-flex flex-wrap align-items-center"
         data-toggle="modal"
         data-target="#lightbox"
         id="galleryContainer"
-      >
+      ></div> -->
+      <!-- Slider main container -->
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper" id="galleryContainer">
+    <!-- Slides -->
+    <!-- <div class="swiper-slide">Slide 1</div>
+    <div class="swiper-slide">Slide 2</div>
+    <div class="swiper-slide">Slide 3</div> -->
+    
+  </div>
+  <!-- If we need pagination -->
+  <!-- <div class="swiper-pagination"></div> -->
+
+  <!-- If we need navigation buttons -->
+  <!-- <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div> -->
+
+  <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
+</div>
  
      
     <script
@@ -58,6 +83,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- <script src="./js/main.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/videoRender.js"></script>
   </body>
 </html>
