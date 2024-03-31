@@ -21,7 +21,7 @@ function renderVideo() {
     // `;
     let content = `
   <div class="swiper-slide">
-  <video src="./img/video/shineVideo (${i}).mp4" controls>
+  <video src="./img/video/shineVideo (${i}).mp4" >
      <source  src="./img/video/shineVideo (${i}).mp4" type="video/mp4" />
   </video>
 
@@ -93,9 +93,6 @@ const swiper = new Swiper(".swiper", {
     el: ".swiper-scrollbar",
   },
 });
-window.onscroll = () => {
-  console.log("roll");
-};
 
 // function handleTouchMove(evt) {
 //   if (!xDown || !yDown) {
@@ -144,10 +141,22 @@ window.onscroll = () => {
 //   touchstartX = e.changedTouches[0].screenX;
 // });
 
-// document.addEventListener("touchend", (e) => {
-//   touchendX = e.changedTouches[0].screenX;
-//   checkDirection();
-// });
+document.addEventListener("touchend", (e) => {
+  // touchendX = e.changedTouches[0].screenX;
+  // checkDirection();
+  console.log("r");
+
+  //console.log(videoActive);
+  let videoList = document.querySelectorAll(".swiper-slide video");
+  console.log(videoList);
+  videoList.forEach((video) => {
+    video.pause();
+  });
+  let videoActive = document.querySelector(
+    ".swiper-slide.swiper-slide-active video"
+  );
+  videoActive.play();
+});
 // window.touchstartX = () => {
 //   console.log("test");
 // };
