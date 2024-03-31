@@ -21,15 +21,11 @@ function renderVideo() {
     // `;
     let content = `
   <div class="swiper-slide">
-  <video
+  <video src="./img/video/shineVideo (${i}).mp4" controls>
+     <source  src="./img/video/shineVideo (${i}).mp4" type="video/mp4" />
+  </video>
 
-            type="video/mp4"
-
-          preload="true"
-             alt="shineVideo (${i})"
-           src="./img/video/shineVideo (${i}).mp4"
-
-            />
+           
   
   </div>
   `;
@@ -97,3 +93,61 @@ const swiper = new Swiper(".swiper", {
     el: ".swiper-scrollbar",
   },
 });
+window.onscroll = () => {
+  console.log("roll");
+};
+
+// function handleTouchMove(evt) {
+//   if (!xDown || !yDown) {
+//     return;
+//   }
+
+//   var xUp = evt.touches[0].clientX;
+//   var yUp = evt.touches[0].clientY;
+
+//   var xDiff = xDown - xUp;
+//   var yDiff = yDown - yUp;
+
+//   if (Math.abs(xDiff) > Math.abs(yDiff)) {
+//     /*most significant*/
+//     if (xDiff > 0) {
+//       /* right swipe */
+//     } else {
+//       /* left swipe */
+//     }
+//   } else {
+//     if (yDiff > 0) {
+//       /* down swipe */
+//     } else {
+//       /* up swipe */
+//     }
+//   }
+//   /* reset values */
+//   xDown = null;
+//   yDown = null;
+// }
+
+// let touchstartX = 0;
+// let touchendX = 0;
+
+// function checkDirection() {
+//   console.log("vuot");
+//   let videoActive = document.querySelector(
+//     ".swiper-slide.swiper-slide-active video"
+//   );
+
+//   videoActive.setAttribute("controls", "");
+//   console.log(videoActive);
+// }
+
+// document.addEventListener("touchstart", (e) => {
+//   touchstartX = e.changedTouches[0].screenX;
+// });
+
+// document.addEventListener("touchend", (e) => {
+//   touchendX = e.changedTouches[0].screenX;
+//   checkDirection();
+// });
+// window.touchstartX = () => {
+//   console.log("test");
+// };
