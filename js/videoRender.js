@@ -21,8 +21,8 @@ function renderVideo() {
     // `;
     let content = `
   <div class="swiper-slide">
-  <video src="./img/video/shineVideo (${i}).mp4" >
-     <source  src="./img/video/shineVideo (${i}).mp4" type="video/mp4" />
+  <video src="./img/video/shineVideo (${i}).mp4" controls preload="metadata">
+     <source  src="./img/video/shineVideo (${i}).mp4#t=0.001" type="video/mp4" />
   </video>
 
            
@@ -40,37 +40,41 @@ const videos = document.querySelectorAll(".swiper-slide video");
 let videoSrc;
 // get images src onclick
 videos.forEach((video) => {
-  video.addEventListener("click", (e) => {
-    videoSrc = e.target.src;
-    //run modal function
-    videoModal(videoSrc);
+  // video.addEventListener("click", (e) => {
+  //   videoSrc = e.target.src;
+  //   //run modal function
+  //   videoModal(videoSrc);
+  // });
+  video.addEventListener("loadedmetadata", () => {
+    //console.log("finish load");
+    video.currentTime = 0.0001;
   });
 });
 //creating the modal
-let videoModal = (src) => {
-  const modal = document.createElement("div");
-  modal.setAttribute("class", "modal");
-  //add the modal to the main section or the parent element
-  document.querySelector(".main").append(modal);
-  //adding image to modal
-  const newVideo = document.createElement("video");
-  newVideo.setAttribute("src", src);
-  newVideo.setAttribute("autoplay", "");
-  newVideo.setAttribute("controls", "");
+// let videoModal = (src) => {
+//   const modal = document.createElement("div");
+//   modal.setAttribute("class", "modal");
+//   //add the modal to the main section or the parent element
+//   document.querySelector(".main").append(modal);
+//   //adding image to modal
+//   const newVideo = document.createElement("video");
+//   newVideo.setAttribute("src", src);
+//   newVideo.setAttribute("autoplay", "");
+//   newVideo.setAttribute("controls", "");
 
-  //creating the close button
-  const closeBtn = document.createElement("i");
-  closeBtn.setAttribute("class", "fas fa-times closeBtn");
-  //close function
-  closeBtn.onclick = () => {
-    modal.remove();
-    console.log("close bntn");
-  };
-  modal.onclick = (e) => {
-    e.target == e.currentTarget && modal.remove();
-  };
-  modal.append(newVideo, closeBtn);
-};
+//   //creating the close button
+//   const closeBtn = document.createElement("i");
+//   closeBtn.setAttribute("class", "fas fa-times closeBtn");
+//   //close function
+//   closeBtn.onclick = () => {
+//     modal.remove();
+//     console.log("close bntn");
+//   };
+//   modal.onclick = (e) => {
+//     e.target == e.currentTarget && modal.remove();
+//   };
+//   modal.append(newVideo, closeBtn);
+// };
 
 const swiper = new Swiper(".swiper", {
   // Optional parameters
